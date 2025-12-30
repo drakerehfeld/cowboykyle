@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cowboy Kyle - Montana Real Estate</title>
+    <title>Cowboy Kyle LLC</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,46 +23,12 @@
         </div>
     </div>
     
-    <div class="content">
-        <header>
-            <h1 class="logo">Cowboy Kyle</h1>
-            <p class="tagline">Montana Real Estate</p>
-        </header>
-        
-        <main>
-            <section class="intro">
-                <h2>Welcome to Montana</h2>
-                <p>Finding your perfect property in Big Sky Country</p>
-            </section>
-            
-            <section class="services">
-                <h2>Our Services</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <h3>Residential Sales</h3>
-                        <p>Homes and ranches across Montana</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Land Acquisition</h3>
-                        <p>Rural and commercial properties</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Property Management</h3>
-                        <p>Expert care for your investments</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="contact">
-                <h2>Get in Touch</h2>
-                <p>Ready to find your Montana property?</p>
-                <a href="mailto:info@cowboykyle.com" class="contact-btn">Contact Us</a>
-            </section>
-        </main>
-        
-        <footer>
-            <p>&copy; 2024 Cowboy Kyle Real Estate. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Cowboy Kyle LLC</p>
+    </footer>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
