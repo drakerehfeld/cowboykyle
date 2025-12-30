@@ -221,6 +221,25 @@ body {
     }
 }
 
+.centered-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+}
+
+.centered-text h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    margin: 0;
+    white-space: nowrap;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -252,6 +271,12 @@ footer {
     .kyle-dog {
         width: 100px;
         height: 80px;
+    }
+    
+    .centered-text h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+        white-space: normal;
     }
     
     footer {
