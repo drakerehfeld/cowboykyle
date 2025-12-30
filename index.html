@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cowboy Kyle LLC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="cowboy-hat">
+            <div class="hat-brim"></div>
+            <div class="hat-crown"></div>
+        </div>
+        <div class="kyle-dog">
+            <div class="dog-body"></div>
+            <div class="dog-head"></div>
+            <div class="dog-ear ear-left"></div>
+            <div class="dog-ear ear-right"></div>
+            <div class="dog-nose"></div>
+            <div class="dog-eye eye-left"></div>
+            <div class="dog-eye eye-right"></div>
+        </div>
+    </div>
+    
+    <div class="centered-text">
+        <h1>Cowboy Kyle - a real estate company</h1>
+    </div>
+    
+    <footer>
+        <p>&copy; <span id="current-year"></span> Cowboy Kyle LLC</p>
+    </footer>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
