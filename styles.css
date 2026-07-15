@@ -1,257 +1,166 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Cowboy Kyle, LLC — cowboykyle.com */
 
 :root {
-    --dark-bg: #0a0a0a;
-    --dark-blue: #0d1b2a;
-    --wave-blue: #1b263b;
-    --wave-blue-light: #415a77;
-    --text-secondary: #a0a0a0;
-    --accent-gold: #d4af37;
-    --accent-brown: #8b4513;
+  --blue-800: #16334d;
+  --blue-600: #2c6fa8;
+  --blue-500: #3d86c4;
+  --blue-100: #dbeaf5;
+  --blue-50:  #f2f8fc;
+
+  --white: #ffffff;
+  --text: #1f3a52;
+  --muted: #5c7891;
+  --line: #dbe5ee;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--dark-blue);
-    overflow-x: hidden;
-    min-height: 100vh;
-    position: relative;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
 }
 
-.animated-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-    background: var(--dark-blue);
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.wave-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+h1, h2 { line-height: 1.25; margin: 0; letter-spacing: -0.015em; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--blue-600); font-weight: 600; }
+a:hover { color: var(--blue-500); }
+
+:focus-visible { outline: 3px solid var(--blue-500); outline-offset: 3px; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: linear-gradient(160deg, var(--blue-600) 0%, var(--blue-500) 100%);
+  color: var(--white);
+  padding: 64px 0 68px;
 }
 
-.wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: var(--wave-blue);
-    opacity: 0.8;
-    animation: waveAnimation 4s ease-in-out infinite;
-    clip-path: polygon(0 50%, 10% 45%, 20% 50%, 30% 45%, 40% 50%, 50% 45%, 60% 50%, 70% 45%, 80% 50%, 90% 45%, 100% 50%, 100% 100%, 0 100%);
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
 }
 
-.wave1 {
-    animation-delay: 0s;
-    background: var(--wave-blue);
-    height: 150px;
-    clip-path: polygon(0 60%, 12% 55%, 24% 60%, 36% 55%, 48% 60%, 60% 55%, 72% 60%, 84% 55%, 100% 60%, 100% 100%, 0 100%);
+/* Black source PNG, flipped to white so it reads on the blue header. */
+.dog {
+  width: 44px;
+  height: auto;
+  flex: none;
+  filter: brightness(0) invert(1);
 }
 
-.wave2 {
-    animation-delay: 1.3s;
-    background: var(--wave-blue-light);
-    height: 180px;
-    opacity: 0.6;
-    clip-path: polygon(0 55%, 8% 50%, 16% 55%, 24% 50%, 32% 55%, 40% 50%, 48% 55%, 56% 50%, 64% 55%, 72% 50%, 80% 55%, 88% 50%, 100% 55%, 100% 100%, 0 100%);
+.hero h1 {
+  font-size: clamp(1.9rem, 4.4vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 14px;
+  max-width: 16ch;
 }
 
-.wave3 {
-    animation-delay: 2.6s;
-    background: var(--wave-blue);
-    height: 200px;
-    opacity: 0.4;
-    clip-path: polygon(0 50%, 15% 45%, 30% 50%, 45% 45%, 60% 50%, 75% 45%, 100% 50%, 100% 100%, 0 100%);
+.tagline {
+  font-size: clamp(1.02rem, 1.7vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 46ch;
 }
 
-@keyframes waveAnimation {
-    0%, 100% {
-        transform: translateY(0) scaleY(1);
-        opacity: 0.8;
-    }
-    50% {
-        transform: translateY(-40px) scaleY(1.15);
-        opacity: 1;
-    }
+/* ---------- Panels ---------- */
+
+main { padding: 64px 0; }
+
+.panel {
+  background: var(--blue-50);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 34px 36px;
+  margin-bottom: 28px;
+}
+.panel:last-child { margin-bottom: 0; }
+
+.panel h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--blue-800);
+  margin-bottom: 14px;
 }
 
-/* Cowboy Hat Animation */
-.cowboy-hat {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 150px;
-    animation: hatFloat 8s ease-in-out infinite;
+.panel ul {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
 }
 
-.hat-brim {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 240px;
-    height: 20px;
-    background: var(--accent-brown);
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    animation: brimRotate 6s ease-in-out infinite;
+.panel li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 8px;
+}
+.panel li:last-child { margin-bottom: 0; }
+
+.panel li::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 9px;
+  width: 10px;
+  height: 5px;
+  border-left: 2.5px solid var(--blue-600);
+  border-bottom: 2.5px solid var(--blue-600);
+  transform: rotate(-45deg);
 }
 
-.hat-crown {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 100px;
-    background: linear-gradient(135deg, #654321 0%, var(--accent-brown) 100%);
-    border-radius: 50% 50% 0 0;
-    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.3);
+.ask {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-weight: 500;
 }
 
-.hat-crown::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 60px;
-    background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
-    border-radius: 50% 50% 0 0;
-}
-
-/* Cowboy Icon */
-.cowboy-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    font-size: 8rem;
-    color: var(--accent-gold);
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-    animation: iconFloat 6s ease-in-out infinite;
-}
-
-@keyframes iconFloat {
-    0%, 100% {
-        transform: translate(-50%, -50%) translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translate(-50%, -50%) translateY(-20px) rotate(5deg);
-    }
-}
-
-/* Animations */
-@keyframes hatFloat {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateX(-50%) translateY(-20px) rotate(5deg);
-    }
-}
-
-@keyframes brimRotate {
-    0%, 100% {
-        transform: translateX(-50%) rotate(0deg);
-    }
-    50% {
-        transform: translateX(-50%) rotate(10deg);
-    }
-}
-
-
-.centered-text {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    text-align: center;
-}
-
-.centered-text h1 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    color: var(--text-secondary);
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-    margin: 0;
-    white-space: nowrap;
-}
-
-.centered-text .subheadline {
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    color: var(--text-secondary);
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-    margin-top: 1rem;
-    opacity: 0.8;
-}
+/* ---------- Footer ---------- */
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 2rem 0;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    z-index: 1;
+  background: var(--blue-50);
+  border-top: 1px solid var(--line);
+  padding: 26px 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .cowboy-hat {
-        width: 150px;
-        height: 120px;
-    }
-    
-    .hat-brim {
-        width: 180px;
-    }
-    
-    .hat-crown {
-        width: 90px;
-        height: 80px;
-    }
-    
-    .cowboy-icon {
-        font-size: 5rem;
-    }
-    
-    .centered-text h1 {
-        font-size: 2rem;
-        padding: 0 1rem;
-        white-space: normal;
-    }
-    
-    .centered-text .subheadline {
-        font-size: 0.9rem;
-        padding: 0 1rem;
-    }
-    
-    footer {
-        font-size: 0.8rem;
-        padding: 1.5rem 0;
-    }
+footer p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Service-area line — fine print, kept crawlable for local SEO. */
+.areas {
+  font-size: 0.72rem !important;
+  line-height: 1.6;
+  color: var(--muted);
+  opacity: 0.75;
+  margin-top: 10px !important;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .hero { padding: 46px 0 50px; }
+  main { padding: 44px 0; }
+  .panel { padding: 26px 22px; }
 }
